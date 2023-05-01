@@ -40,7 +40,7 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 
 func (a *Demo) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	host :=  strings.Split(req.URL.Host, ":")[0]
-	path := host + "/" + req.URL.Path
+	path := "/" + host + req.URL.Path
 
 	// is dir?
 	if strings.HasSuffix(path, "/") {
