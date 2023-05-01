@@ -22,7 +22,7 @@ func TestDemo(t *testing.T) {
 
 	recorder := httptest.NewRecorder()
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodGet, "http://site.example.com/", nil)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, "http://site.example.com:8080/", nil)
 	if err != nil {
 		t.Fatal(err)
 	}

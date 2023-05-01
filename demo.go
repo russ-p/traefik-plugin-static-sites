@@ -40,18 +40,16 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 
 func (a *Demo) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 
-	host :=  strings.Split(req.URL.Host, ":")[0]
+	host :=  strings.Split(req.Host, ":")[0]
 	path := "/" + host + req.URL.Path
 
 	// is dir?
 	if strings.HasSuffix(path, "/") {
 		path = path + "index.html"
 	}
+
+	fmt.Printf("Forward to %s\n", path)
+
 	req.URL.Path = path
-
-
-	fmt.Printf("Forward to %s\n", req.URL.Path)
-
-
 	a.next.ServeHTTP(rw, req)
 }
