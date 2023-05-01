@@ -51,5 +51,7 @@ func (a *Demo) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	fmt.Printf("Forward to %s\n", path)
 
 	req.URL.Path = path
+	req.RequestURI = req.URL.RequestURI()
+	
 	a.next.ServeHTTP(rw, req)
 }
