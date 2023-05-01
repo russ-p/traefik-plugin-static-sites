@@ -1,4 +1,4 @@
-package staticsitesplugin_test
+package traefik_plugin_static_sites_test
 
 import (
 	"context"
@@ -10,12 +10,12 @@ import (
 )
 
 func TestDemo(t *testing.T) {
-	cfg := staticsitesplugin.CreateConfig()
+	cfg := traefik_plugin_static_sites.CreateConfig()
 
 	ctx := context.Background()
 	next := http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {})
 
-	handler, err := staticsitesplugin.New(ctx, next, cfg, "staticsites-plugin")
+	handler, err := traefik_plugin_static_sites.New(ctx, next, cfg, "staticsites-plugin")
 	if err != nil {
 		t.Fatal(err)
 	}

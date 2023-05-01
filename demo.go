@@ -1,5 +1,5 @@
 // Package 
-package staticsitesplugin
+package traefik_plugin_static_sites
 
 import (
 	// "bytes"
