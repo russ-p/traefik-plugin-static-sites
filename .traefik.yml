@@ -1,0 +1,12 @@
+displayName: Static Sites Plugin
+type: middleware
+iconPath: .assets/icon.png
+
+import: github.com/russ-p/traefik-plugin-static-sites
+
+summary: 'Serve multiple static sites in easy way'
+
+testData:
+  Headers:
+    X-Demo: test
+    X-URL: '{{URL}}'
